@@ -102,3 +102,19 @@ bio.display = function () {
   $('#skills').append(skillMarkup);
 }
 bio.display();
+
+work.display = function () {
+  var $work = $('#workExperience');
+  $work.append(HTMLworkStart);
+  var $workStart = $('.work-entry:last');
+  var workMarkup = '';
+  work.jobs.forEach(function (job) {
+    workMarkup = workMarkup + HTMLworkEmployer.replace('%data%', job.employer);
+    workMarkup = workMarkup + HTMLworkTitle.replace('%data%', job.title);
+    workMarkup = workMarkup + HTMLworkDates.replace('%data%', job.dates);
+    workMarkup = workMarkup + HTMLworkLocation.replace('%data%', job.location);
+    workMarkup = workMarkup + HTMLworkDescription.replace('%data%', job.description);
+  });
+  $workStart.append(workMarkup);
+}
+work.display();
