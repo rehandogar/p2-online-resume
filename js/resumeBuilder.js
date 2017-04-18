@@ -35,7 +35,7 @@ var education = {
     {
       "title": "Front End Nano Degree",
       "school": "udacity",
-      "date": "15 Dec, 2016",
+      "dates": "15 Dec, 2016",
       "url": "https://www.udacity.com/"
     }
   ]
@@ -135,3 +135,34 @@ projects.display = function () {
   $projectStart.append(projectMarkup);
 }
 projects.display();
+
+education.display = function () {
+  var $education = $('#education');
+  var $onlineCoursesEntry, $schoolEntry;
+  var schoolMarkup = '', onlineCoursesMarkup = '';
+
+  $education.append(HTMLschoolStart);
+  $schoolEntry = $('.education-entry');
+  education.schools.forEach(function (school) {
+    schoolMarkup = schoolMarkup + HTMLschoolName.replace('%data%', school.name);
+    schoolMarkup = schoolMarkup + HTMLschoolDegree.replace('%data%', school.degree);
+    schoolMarkup = schoolMarkup + HTMLschoolDates.replace('%data%', school.dates);
+    schoolMarkup = schoolMarkup + HTMLschoolLocation.replace('%data%', school.location);
+    school.majors.forEach(function (course) {
+      schoolMarkup = schoolMarkup + HTMLschoolMajor.replace('%data%', course);
+    });
+  });
+  $schoolEntry.append(schoolMarkup);
+
+  $education.append(HTMLonlineClasses);
+  $education.append(HTMLschoolStart);
+  $onlineCoursesEntry = $('.education-entry:last');
+  education.onlineCourses.forEach(function (course) {
+    onlineCoursesMarkup = onlineCoursesMarkup + HTMLonlineTitle.replace('%data%', course.title);
+    onlineCoursesMarkup = onlineCoursesMarkup + HTMLonlineSchool.replace('%data%', course.school);
+    onlineCoursesMarkup = onlineCoursesMarkup + HTMLonlineDates.replace('%data%', course.dates);
+    onlineCoursesMarkup = onlineCoursesMarkup + HTMLonlineURL.replace('%data%', course.url);
+  });
+  $onlineCoursesEntry.append(onlineCoursesMarkup);
+}
+education.display();
