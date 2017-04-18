@@ -118,3 +118,20 @@ work.display = function () {
   $workStart.append(workMarkup);
 }
 work.display();
+
+projects.display = function () {
+  var $projects = $('#projects');
+  var projectMarkup = '';
+  $projects.append(HTMLprojectStart);
+  var $projectStart = $('.project-entry');
+  projects.projects.forEach(function (project) {
+    projectMarkup = projectMarkup + HTMLprojectTitle.replace('%data%', project.title);
+    projectMarkup = projectMarkup + HTMLprojectDates.replace('%data%', project.dates);
+    projectMarkup = projectMarkup + HTMLprojectDescription.replace('%data%', project.description);
+    project.images.forEach(function (image) {
+      projectMarkup = projectMarkup + HTMLprojectImage.replace('%data%', image);
+    });
+  });
+  $projectStart.append(projectMarkup);
+}
+projects.display();
