@@ -166,3 +166,8 @@ education.display = function () {
   $onlineCoursesEntry.append(onlineCoursesMarkup);
 }
 education.display();
+
+function appendMap() {
+  $('#mapDiv').append(googleMap);
+}
+appendMap();
