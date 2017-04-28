@@ -18,7 +18,7 @@ var bio = {
     "And Many More!"
   ],
   "biopic":"images/fry.png"
-}
+};
 
 var education = {
   "schools": [
@@ -39,7 +39,7 @@ var education = {
       "url": "https://www.udacity.com/"
     }
   ]
-}
+};
 
 var work = {
   "jobs": [
@@ -51,7 +51,7 @@ var work = {
       "description": "My job is to build the stunning front end experiences for users"
     }
   ]
-}
+};
 
 var projects = {
   "projects": [
@@ -74,7 +74,7 @@ var projects = {
       ]
     }
   ]
-}
+};
 
 bio.display = function () {
   var $header = $('#header');
@@ -100,7 +100,7 @@ bio.display = function () {
     skillMarkup = skillMarkup + HTMLskills.replace('%data%', skill);
   });
   $('#skills').append(skillMarkup);
-}
+};
 bio.display();
 
 work.display = function () {
@@ -116,7 +116,7 @@ work.display = function () {
     workMarkup = workMarkup + HTMLworkDescription.replace('%data%', job.description);
   });
   $workStart.append(workMarkup);
-}
+};
 work.display();
 
 projects.display = function () {
@@ -133,7 +133,7 @@ projects.display = function () {
     });
   });
   $projectStart.append(projectMarkup);
-}
+};
 projects.display();
 
 education.display = function () {
@@ -164,7 +164,7 @@ education.display = function () {
     onlineCoursesMarkup = onlineCoursesMarkup + HTMLonlineURL.replace('%data%', course.url);
   });
   $onlineCoursesEntry.append(onlineCoursesMarkup);
-}
+};
 education.display();
 
 function appendMap() {
