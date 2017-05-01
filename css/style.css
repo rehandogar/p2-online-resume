@@ -132,6 +132,10 @@ a {
   background-color: #484848;
 }
 
+#header span {
+  color: #fff;
+}
+
 .flex-box {
   display: -webkit-flex;
   display: flex;
@@ -173,6 +177,10 @@ span {
 
 #lets-connect {
   text-align: center;
+}
+
+#lets-connect h2{
+  color: #fff;
 }
 
 /* Media queries to handle various device widths */
